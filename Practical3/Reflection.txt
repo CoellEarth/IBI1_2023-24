@@ -1,0 +1,5 @@
+Everything went well generally. But I did encounter problems when I cloned the repo on github to my own computer.
+I miscloned professor's repo so I could not push it back to github.
+But I worked that out in the end.
+What I think is challenging is the task of builiding my own website. That is not difficult but rather complicated.
+I don't necessarily have any question so far in this practical.
