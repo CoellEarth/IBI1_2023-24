@@ -8,4 +8,3 @@ print(a)
 for i in range (5):
     a=a*2+3
     print(a)
-
