@@ -5,6 +5,6 @@
 print("The recursive sequence is")
 a=4
 print(a)
-for i in range (5):
+for i in range (4):
     a=a*2+3
     print(a)
