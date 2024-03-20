@@ -51,8 +51,7 @@ print("---")
 print("What kind of activity are you interested in when it comes to the average time spent? 'sleeping', 'classes', 'studying', 'TV', 'Music', 'Others' ")
 print("PLEASE BE MINDFUL OF YOUR SPELLING!")
 userinput=input("I am interested in:")
-if user_input in activity_time:
-    print(activity_time[user_input], "hours spent on an average level")
+if userinput in activity_time:
+    print(activity_time[userinput], "hours spent on an average level")
 else:
     print("Invalid activity name. Please enter a valid activity.")
-
