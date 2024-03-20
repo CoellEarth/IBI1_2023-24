@@ -5,12 +5,17 @@
 # Calculate the time for "Others"
 # Add the "Others" entry to the dictionary
 # Print the updated dictionary
-
-activity_time={'sleeping':8,'classes':6,'studying':3.5,'TV':2,'Music':1}
+sleep=8
+class_=6
+study_=3.5
+TV_=2
+Music_=1
+activity_time={'sleeping':sleep,'classes':class_,'studying':study_,'TV':TV_,'Music':Music_}
 print('before adding the "Others" entry,the dictionary is ',activity_time)
 #24-8-6-3.5-2-1=3.5
 #so "other" occupies 3.5 hours on an average level
-activity_time['Others']=3.5
+others_=3.5
+activity_time['Others']=others_
 print('after adding the "Others" entry,the dictionary is ',activity_time)
 
 # Import the necessary library
