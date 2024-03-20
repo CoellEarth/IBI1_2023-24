@@ -6,7 +6,7 @@
 # Add the "Others" entry to the dictionary
 # Print the updated dictionary
 
-#a variable of the requested activity that can be modified
+#variables of the requested activity that can be modified
 sleep=8
 class_=6
 study_=3.5
@@ -16,7 +16,9 @@ activity_time={'sleeping':sleep,'classes':class_,'studying':study_,'TV':TV_,'Mus
 print('before adding the "Others" entry,the dictionary is ',activity_time)
 #24-8-6-3.5-2-1=3.5
 #so "other" occupies 3.5 hours on an average level
-others_=3.5
+
+#another variable of the requested activity that can be modified
+others_=3.5 
 activity_time['Others']=others_
 print('after adding the "Others" entry,the dictionary is ',activity_time)
 
