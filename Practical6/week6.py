@@ -5,6 +5,8 @@
 # Calculate the time for "Others"
 # Add the "Others" entry to the dictionary
 # Print the updated dictionary
+
+#a variable of the requested activity that can be modified
 sleep=8
 class_=6
 study_=3.5
