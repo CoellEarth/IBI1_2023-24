@@ -30,14 +30,6 @@ plt.show()
 plt.clf()
 
 #question solutions
-
 Discriminate_2019=dalys_data[dalys_data.iloc[:,2] == 2019 ]
-data_set_2019=Discriminate_2019.loc[:,"DALYs"]
-#Discriminate_2019=dalys_data.iloc[:,2]=="2019"
-#data_set_2019=dalys_data.loc[Discriminate_2019,"DALYs"]
-print(data_set_2019)
-
-plt.figure()
-data_set_2019.plot(kind="box",title="DALYs in 2019 across countries",figsize=(10,8))
-plt.show()
-plt.clf()
+Discriminate_2019_18000less=Discriminate_2019[Discriminate_2019.iloc[:,3]<=18000.00]
+print(Discriminate_2019_18000less)
