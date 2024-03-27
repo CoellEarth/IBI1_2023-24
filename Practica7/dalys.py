@@ -10,6 +10,7 @@ specific_value=dalys_data.iloc[0:101:10,3]
 print(specific_value)
 
 Discriminate_Afghanistan=dalys_data.iloc[:,0]=="Afghanistan"
+#Discriminate_Afghanistan is a boolean
 Afghanistan_data=dalys_data.loc[Discriminate_Afghanistan,"DALYs"]
 print(Afghanistan_data)
 
