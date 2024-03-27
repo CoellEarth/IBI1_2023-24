@@ -1,4 +1,18 @@
-Question: Plot a boxplot of DALYs across countries in 2019
+Question: Are there places in the World where the DALYs in 2019 is less than 18,000? If so, where are they?
 
-32-43
+32-35
 
+Answer: Yes.
+
+Discussion:
+DALYs stands for Disability-Adjusted Life Years. It is a measure of overall disease burden, expressed as the number of years lost due to ill-health, disability, or early death. DALYs combine years of life lost due to premature mortality (YLLs) and years lived with disability (YLDs) into a single measure. 
+
+I expect a negative correlation between both the economic development & the area and the number of DALYs. So the areas where are more developed and smaller are more likely to have DALYs less than 18,000.
+
+The output of my code to this question is that the countries are:Iceland,Israel,Japan,Singapore,South Korea,Switzerland.
+
+That is consistent with my hypothesis.
+
+The negative correlation between economic development, area size, and DALYs suggests that more developed countries with smaller land areas tend to experience lower disease burden. This is likely due to factors such as improved access to healthcare, better sanitation facilities, higher levels of education, and healthier lifestyle choices.
+
+For instance, countries like Iceland, Israel, Japan, Singapore, South Korea, and Switzerland demonstrate lower DALYs despite their economic prosperity and compact size. These nations have invested heavily in healthcare infrastructure, public health initiatives, and disease prevention programs. Moreover, their populations often possess higher levels of health literacy, leading to proactive health-seeking behaviors and preventive measures.
