@@ -29,5 +29,15 @@ plt.xticks(China_Year_data,rotation=-90)
 plt.show()
 plt.clf()
 
+#question solutions
 
+Discriminate_2019=dalys_data[dalys_data.iloc[:,2] == 2019 ]
+data_set_2019=Discriminate_2019.loc[:,"DALYs"]
+#Discriminate_2019=dalys_data.iloc[:,2]=="2019"
+#data_set_2019=dalys_data.loc[Discriminate_2019,"DALYs"]
+print(data_set_2019)
 
+plt.figure()
+data_set_2019.plot(kind="box",title="DALYs in 2019 across countries",figsize=(10,8))
+plt.show()
+plt.clf()
