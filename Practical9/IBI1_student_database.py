@@ -12,3 +12,4 @@ class students:
 # Example usage:
 student1 = students("John Doe", "BMI", 85, 90, 75)
 print(student1.all_information())
+#output:Student John Doe whose major is BMI gained 85 in the ICA of code portfolio, 90 in the ICA of group project, and 75 in the final.
