@@ -16,4 +16,4 @@ print("Your fav James Bond might be",your_fav_JamesBond(born))
 
 #example
 print("I was born in 2005, so my fav JB actor is",your_fav_JamesBond(2005),"according to the theory.")
-#returns "I was born in 2005, so my fav JB actor is no one, because James Bond does not exist in your era according to the theory."
+#the output shows "I was born in 2005, so my fav JB actor is no one, because James Bond does not exist in your era according to the theory."
