@@ -1,7 +1,7 @@
 import re
 
 input_file = r"C:\Users\32771\Desktop\IBI\practical\materials\Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa"
-output_file = "duplicated_genes.fasta"
+output_file = "duplicated_genes.fa"
 
 with open(input_file, 'r') as f:
     content = f.read()
