@@ -1,1 +1,5 @@
-
+	This is a challenging but also exciting practical.
+	When constructing SIR model, my initial plan of using the random.choice function was leaded by the example provided on the practical handout guide. So I spent a long long time trying to fit my model into that style. However, I figured another way out using bool value in the random.choice function, which works perfectly well in my perspective. After completing the first part of the task the second one was easier.
+	However, in the third part of the task, the way of programming to find a correct dot to turn 0 to 1 made me stuck again. After looking the code provided, I was shocked by the well design of the code and the beauty of it.
+	And seeing how to model a real-world situation-though a simplified one-in python is exciting. By that I mean the way of visualizing the trend of susceptible/infected/recovered people, the threshold of herd vaccination and 2D spatial spread of diseases is extremely intriguing.
+	I learned a lot in this practical.
