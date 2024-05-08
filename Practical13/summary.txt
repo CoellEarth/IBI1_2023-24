@@ -1,1 +1,28 @@
+#The results of my code are listed below:
 
+There are 583 same aa in human and mouse
+the percentage identity is 0.9253968253968254 between human and mouse 
+the alignment_score is 3137.0 between human and mouse
+
+There are 578 same aa in human and rat
+the percentage identity is 0.9174603174603174 between human and rat 
+the alignment_score is 3107.0 between human and rat
+
+There are 610 same aa in mouse and rat
+the percentage identity is 0.9682539682539683 between mouse and rat 
+the alignment_score is 3261.0 between mouse and rat
+
+#Summary of the results:
+
+The percentage identity(PI) of mouse and rat is the highest while the PI in human and mouse is higher than the PI in human and rat.
+This order is same when it comes to alignment score.
+
+#Interprestion of the results.
+The PI and alignment score in mouse and rat are the highest may be due to the fact that they are both rodent spieces while the other is homo sapiens.
+The PI in human and mouse is higher than that in human and rat indicates that human aa sequence for this very gene is more similar to mouse than rat.
+The alignment score in human and mouse is higher than that in human and rat indicates that the substitution frequency from human to mouse is higher than than from human to rat. So, human aa sequence for this very gene is more similar to mouse than rat, which means they are more alike.
+
+#Conclusion:
+
+Mouse and rat are most similar, for that its PI and alignment score is the highest.
+Mouse is a more ideal model to use in the study of this gene, as is explaned in the "Interpresion"
