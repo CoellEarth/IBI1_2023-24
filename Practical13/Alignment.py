@@ -1,3 +1,5 @@
+###this file only includes the code, the answers to the quetion are in another file in this dir.
+
 import blosum as bl
 matrix = bl.BLOSUM(62)
 
