@@ -4,6 +4,7 @@ def affordability(total_money, price_per_piece):
     return f"you can afford {num_pieces} piece(s) of chocolate bar. And you still have {change} yuan left."
 
 #Example
+print("example:")
 total_money = 100
 price_per_piece = 7
 print(f"Based on the information that you have {total_money} yuan in total and each piece of chocolate bar costs {price_per_piece} yuan, so {affordability(total_money, price_per_piece)}")
