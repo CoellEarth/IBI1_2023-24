@@ -10,6 +10,7 @@ class students:
         return f"Student {self.name} whose major is {self.major} gained {self.code_portfolio_score} in the ICA of code portfolio, {self.group_project_score} in the ICA of group project, and {self.exam_score} in the final."
 
 # Example usage:
+print("example:")
 student1 = students("John Doe", "BMI", 85, 90, 75)
 print(student1.all_information())
 #output:Student John Doe whose major is BMI gained 85 in the ICA of code portfolio, 90 in the ICA of group project, and 75 in the final.
