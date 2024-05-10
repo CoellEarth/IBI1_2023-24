@@ -76,7 +76,7 @@ userinput=input("I am interested in:")
 if userinput in activity_time:
     print(activity_time[userinput], "hours spent on an average level")
 else:
-    print("Invalid activity name. Please enter a valid activity.")-3.5-2-1=3.5
+    print("Invalid activity name. Please enter a valid activity.")
 #so "other" occupies 3.5 hours on an average level
 
 #another variable of the requested activity that can be modified
