@@ -1,7 +1,11 @@
-#Interact with the user to get their input 
+#1 Create a table which stores the correspondence between codons and amino acids
+#2 Define a function called mRNA_polypeptide_convertor
+#3 Create a string to store the corresponding amino acid and put all aa togrther 
+#4 what start and stop codon(s) are 
+#5 Find where the start codon is in the entire mRNA sequence, read 3 by 3 after it
+#6 Make the reading stop if encountering stop codon
 user_input = input("Please enter your mRNA sequence here: ")
-#Create a table which stores the correspondence between codons and amino acids
-correspondence_table = {'UUU': 'F', 'UUC': 'F', 'UUA': 'L', 'UUG': 'L', 
+correspondence_table = {'UUU': 'F', 'UUC': 'F', 'UUA': 'L', 'UUG': 'L',  #1
                         'CUU': 'L', 'CUC': 'L', 'CUA': 'L', 'CUG': 'L', 
                         'AUU': 'I', 'AUC': 'I', 'AUA': 'I', 'AUG': 'M', 
                         'GUU': 'V', 'GUC': 'V', 'GUA': 'V', 'GUG': 'V', 
@@ -17,26 +21,17 @@ correspondence_table = {'UUU': 'F', 'UUC': 'F', 'UUA': 'L', 'UUG': 'L',
                         'CGU': 'R', 'CGC': 'R', 'CGA': 'R', 'CGG': 'R', 
                         'AGU': 'S', 'AGC': 'S', 'AGA': 'R', 'AGG': 'R', 
                         'GGU': 'G', 'GGC': 'G', 'GGA': 'G', 'GGG': 'G'}
-#Define a function called mRNA_polypeptide_convertor
-def mRNA_polypeptide_convertor(user_input):
-    #Create a string to store the corresponding amino acid 
-    peptide_sequence = ""
-    #Give the information of what start and stop codon(s) are
-    start_codon = "AUG"
+def mRNA_polypeptide_convertor(user_input): #2
+    peptide_sequence = "" #3
+    start_codon = "AUG" #4
     stop_codons = ["UAA", "UAG", "UGA"]
-    #Find where the start codon is in the entire mRNA sequence
-    start_index = user_input.find(start_codon)
-    #From the start codon found, read the nucleotide three by three
+    start_index = user_input.find(start_codon) #5
     for i in range(start_index, len(user_input), 3):
         codon = user_input[i:i + 3]
-        #Make the reading stop if encountering stop codon
-        if codon in stop_codons:
+        if codon in stop_codons: #6
             break
-        #Construct correspondence and and the amino acid to the string
-        else:
+        else: #3
             amino_acid = correspondence_table.get(codon)
             peptide_sequence += amino_acid
-    #return the result: peptide_sequence
     return peptide_sequence
-#Print it out to make the user see the result
 print(mRNA_polypeptide_convertor(user_input))
