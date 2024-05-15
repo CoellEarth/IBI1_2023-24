@@ -1,76 +1,40 @@
+#import necessary libraries for python
 import numpy as np
 import matplotlib.pyplot as plt
 
-N_infected = 1
-N_susceptible = 9999
-N_recovered = 0
-N_total = 10000
-beta = 0.3
-gamma = 0.05
+#define basic variables for the model
+N=10000
+S=[9990]
+I=[10]
+R=[0]
+Time=[0]
+beta=0.3
+gamma=0.05
+#creating loops for 1000 times
+for i in range(1,1000):
+    Time.append(i)
+    #calculating the population from infected to recovered in this loop
+    lis_ItoR=np.random.choice(range(2),I[i-1],p=[gamma,1-gamma])
+    ItoR=np.sum(lis_ItoR==0)
+    proportion=I[i-1]/N
+    Pinfect=proportion*beta
+    #cauculating the population from susceptible to infected
+    lis_StoI=np.random.choice(range(2),S[i-1],p=[1-Pinfect,Pinfect])
+    StoI=np.sum(lis_StoI==1)
+    #append the new values in the arrays
+    I.append(I[i-1]-ItoR+StoI)
+    R.append(R[i-1]+ItoR)
+    S.append(S[i-1]-StoI)
 
-sus_number_info = [N_susceptible]
-infected_number_info = [N_infected]
-recovered_number_info = [N_recovered]
-
-for time_points in range(1000):
-    infection_proportion = N_infected / N_total
-    infection_rate = beta * infection_proportion
-    recovery_rate = gamma
-    
-    new_infections = np.random.choice([True, False], size=N_susceptible, p=[infection_rate, 1 - infection_rate])
-    N_infected += np.sum(new_infections)
-    N_susceptible -= np.sum(new_infections)
-    
-    new_recoveries = np.random.choice([True, False], size=N_infected, p=[recovery_rate, 1 - recovery_rate])
-    N_recovered += np.sum(new_recoveries)
-    N_infected -= np.sum(new_recoveries)
-
-    sus_number_info.append(N_susceptible)
-    infected_number_info.append(N_infected)
-    recovered_number_info.append(N_recovered)
-
-
-plt.plot(sus_number_info, label='Susceptible')
-plt.plot(infected_number_info, label='Infected')
-plt.plot(recovered_number_info, label='Recovered')
-plt.title("SIR Model")
+#draw graph for the SIR model
+plt.figure()
+plt.figure(figsize =(6,4),dpi=150)
+plt.title('SIR model')
+plt.plot(Time,S,label='Susceptible')
+plt.plot(Time,I,label='Infected')
+plt.plot(Time,R,label='Recovered')
 plt.xlabel('Time')
-plt.ylabel('Number of People')
+plt.ylabel('population')
 plt.legend()
 plt.show()
-
-#PSEUDOCODE
-# Initialize variables:
-#     N_infected = 1
-#     N_susceptible = 9999
-#     N_recovered = 0
-#     N_total = 10000
-#     beta = 0.3
-#     gamma = 0.05
-#     sus_number_info = list containing N_susceptible
-#     infected_number_info = list containing N_infected
-#     recovered_number_info = list containing N_recovered
-#
-# For time_points from 0 to 999:
-#     Calculate infection_proportion = N_infected / N_total
-#     Calculate infection_rate = beta * infection_proportion
-#     Calculate recovery_rate = gamma
-#
-#     Generate a random boolean array of size N_susceptible with True probability = infection_rate
-#     Count the number of True values in the array
-#     Add the count to N_infected
-#     Subtract the count from N_susceptible
-#
-#     Generate a random boolean array of size N_infected with True probability = recovery_rate
-#     Count the number of True values in the array
-#     Add the count to N_recovered
-#     Subtract the count from N_infected
-#
-#     Append the updated values of N_susceptible, N_infected, and N_recovered to their respective lists
-#
-# Plot the lists sus_number_info, infected_number_info, and recovered_number_info as line plots
-# Set the plot title to "SIR Model"
-# Set the x-axis label to "Time"
-# Set the y-axis label to "Number of People"
-# Add a legend to the plot
-# Display the plot
+plt.clf()
