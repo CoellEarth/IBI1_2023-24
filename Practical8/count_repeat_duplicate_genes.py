@@ -1,64 +1,38 @@
-#read original fastq file
-with open('Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa', 'r') as f:
-    lines = f.readlines()
-
 import re
+#imput the repetitive sequences to be counted
+tips='Please input one of the two repetitive sequences GTGTGT or GTCTGT: '
+repeat_patterns = str(input(tips))
+#creat a function to count the repetitive sequence, and return the duplicated number
+def count_repeats(sequence, patterns):
+    total_count = 0
+    for pattern in patterns:
+        matches = re.finditer(pattern, sequence)
+        for match in matches:
+            total_count += 1
+    return total_count
 
-#set the variables
-gene_name = ''
-gene_seq = ''
-gene_description=""
-duplicate_genes = []
+#import the file path of the file to be used
+input_file_path = r'E:\IBI1_2023-24\Practical8\duplicate genes.fa'
+output_file_path = f'{repeat_patterns}_duplicate_genes.fa'
 
-dp=input("Please enter duplicate sequences: ")
-
-
-if dp=="GTCTGT":
-#use for loop to process the fastq file(in the first loop: record the variables; at the begining of the second loop: select the duplicate gene)
- for line in lines:
-    if line.startswith('>'):
-        if 'duplication' in gene_description:
-            #count the GTGTGT
-            GTCTGT=re.findall(r"GTCTGT",gene_seq)
-            gene_name +="  GTCTGT number: "
-            gene_name += str(len(GTCTGT))
-            if int(len(GTCTGT))!=0:
-                duplicate_genes.append((gene_name, gene_seq))
-        gene_name = re.findall(r" gene:(.+?) ",line)
-        gene_name = gene_name[0]
-        gene_description = line.strip('>\n').split(' ')
-        gene_seq = ''
-    else:
-        gene_seq += line.strip()
-        
-#save the duplicate gene in another fastq file
- with open('GTCTGT_duplicate_genes.fa', 'w') as f:
-    for name, seq in duplicate_genes:
-        f.write(f'>{name}\n{seq}\n')
-        
-
-elif dp=="GTGTGT":
-#use for loop to process the fastq file(in the first loop: record the variables; at the begining of the second loop: select the duplicate gene)
- for line in lines:
-    if line.startswith('>'):
-        if 'duplication' in gene_description:
-            #count the GTGTGT
-            GTGTGT=re.findall(r"GTGTGT",gene_seq)
-            gene_name +="  GTGTGT number: "
-            gene_name += str(len(GTGTGT))
-            if int(len(GTGTGT))!=0:
-                duplicate_genes.append((gene_name, gene_seq))
-        gene_name = re.findall(r" gene:(.+?) ",line)
-        gene_name = gene_name[0]
-        gene_description = line.strip('>\n').split(' ')
-        gene_seq = ''
-    else:
-        gene_seq += line.strip()
-        
-#save the duplicate gene in another fastq file
- with open('GTGTGT_duplicate_genes.fa', 'w') as f:
-    for name, seq in duplicate_genes:
-        f.write(f'>{name}\n{seq}\n')
-        
-else:
-    print("Please enter the correct sequence!")
+#Open the files
+with open(input_file_path, 'r') as input_file, open(output_file_path, 'w') as output_file:
+    gene_name = ''
+    sequence = ''
+    for line in input_file:
+        if line.startswith('>'):
+            # get information for the former gene
+            if gene_name != '':
+                output_file.write(gene_name + ' ' + str(count_repeats(sequence,repeat_patterns)) + '\n' + sequence + '\n\n')
+            # get the information of the new gene
+            gene_name = line.strip()
+            # reset the sequence
+            sequence = ''
+        else:
+            # remove the \n at the end of a line of sequence
+            sequence += line.strip()
+    # processing the information for the last gene
+    if gene_name != '':
+        output_file.write(gene_name + ' ' + str(count_repeats(sequence, repeat_patterns)) + '\n' + sequence + '\n')
+            
+    
