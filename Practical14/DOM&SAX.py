@@ -67,7 +67,7 @@ total_SAX = parse_SAX(file_path)
 
 # Plotting the results
 plt.figure(figsize=(10, 6)) 
-bars = plt.bar(total_DOM.keys(), total_DOM.values(), width=0.5, color="blue")
+bars = plt.bar(total_DOM.keys(), total_DOM.values(), width=0.3, color="black")
 plt.ylabel('frequencies(time)')
 plt.title('The Number of Terms within Each Ontology: DOM')
 plt.xticks(rotation=90) 
@@ -79,7 +79,7 @@ plt.show()
 plt.clf()
 
 plt.figure(figsize=(10, 6)) 
-bars = plt.bar(total_SAX.keys(), total_SAX.values(), width=0.5, color="blue")
+bars = plt.bar(total_SAX.keys(), total_SAX.values(), width=0.3, color="pink")
 plt.ylabel('frequencies(time)')
 plt.title('The Number of Terms within Each Ontology: SAX')
 plt.xticks(rotation=90) 
